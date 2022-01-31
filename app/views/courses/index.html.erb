@@ -1,0 +1,26 @@
+<h1> List all Courses along with their tutors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Courses</th>
+      <th colspan = "10" >Tutors</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td>  <%= course.course_name %> </td>
+        <td></td><td></td><td></td><td></td>
+        <td> <%= render course.tutors %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= link_to "Create new Course", new_course_path %>
+||
+<%= link_to "Create new tutor", new_tutor_path %> 
+</p>

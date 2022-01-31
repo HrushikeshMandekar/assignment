@@ -1,0 +1,27 @@
+<h1>Create new course</h1>
+
+<% if @course.errors.any? %>
+  <h2>The following errors prevented the course from being saved</h2>
+  <ul>
+    <% @course.errors.full_messages.each do |msg|%>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @course, local: true) do |f| %>
+
+  <p>
+    <%= f.label :course_name %><br/>
+    <%= f.text_field :course_name %>
+  </p>
+
+  <p>
+    <%= f.submit "Create course" %>
+  </p>
+
+<% end %>
+
+<p>
+  <%= link_to "Cancel and return to course listing page", courses_path %>
+</p>

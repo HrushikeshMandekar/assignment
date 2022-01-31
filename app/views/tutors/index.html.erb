@@ -1,0 +1,23 @@
+<h1> Course listing page </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tutors</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tutors.each do |tutor| %>
+      <tr>
+        <td>  <%= tutor.tutor_name %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= link_to "Create new tutor", new_tutor_path %> 
+||
+<%= link_to "Go back to course listing page", courses_path %>
+</p>

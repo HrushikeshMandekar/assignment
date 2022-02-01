@@ -24,5 +24,4 @@ class TutorsController < ApplicationController
     params.require(:tutor).permit(:tutor_name, :course_id)
   end
 
-
 end

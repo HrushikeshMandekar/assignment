@@ -1,13 +1,6 @@
 <h1>Create new course</h1>
 
-<% if @course.errors.any? %>
-  <h2>The following errors prevented the course from being saved</h2>
-  <ul>
-    <% @course.errors.full_messages.each do |msg|%>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render 'shared/errors', obj: @course %>
 
 <%= form_with(model: @course, local: true) do |f| %>
 

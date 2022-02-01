@@ -7,7 +7,7 @@ class TutorsController < ApplicationController
   def create
     @tutor = Tutor.new(tutor_params)
     if @tutor.save
-      flash[:notice] = "Course was created successfully."
+      flash[:notice] = "Tutor was created and assigned to a course successfully."
       redirect_to courses_path
     else
       render 'new'
